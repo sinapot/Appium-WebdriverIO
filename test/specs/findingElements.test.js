@@ -33,7 +33,7 @@ describe('Alert Dialogs', async() => {
         driver.closeApp()
     });
 
-    xit('Extracting and Asserting Multiple Elements', async () => {
+    it('Extracting and Asserting Multiple Elements', async () => {
         driver.launchApp()
         //expect below Array
         const expectedList = ['API Demos',"Access'ibility","Accessibility","Animation","App",
@@ -43,13 +43,21 @@ describe('Alert Dialogs', async() => {
         // extracting multiple elements to an array
         const realList = await $$('android.widget.TextView');
 
-        const actualList=[]
+        //const actualList=[]
         //get the text of each elements and store to actualList array
-        for (const element of realList) {
-            actualList.push(await element.getText());
-          }
+        // for (let element of realList) {
+        //     actualList.push(await element.getText());
+        //   }
+        // await console.log(realList.length)
+        // for (let i=0; i < realList.length; i++){
+        //     let text = await realList[i].getText();
+        //     actualList.push(text);
+        // }
+
+        // await console.log(actualList)
 
         //assert actualList text array is the same expected
-        await expect(actualList).toEqual(expectedList)
+        //0pp;.0-
+        o0.p?[await expect(realList.length).toEqual(expectedList.length)
     });
 });
