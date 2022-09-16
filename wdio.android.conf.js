@@ -2,11 +2,8 @@ let { join } = require('path');
 exports.config = {
     port: 4723,
     specs: [
-        './test/specs/**/*.js',
-        // './test/specs/android/datePicker.test.js',
-        // './test/specs/android/dialogAlertBox.test.js',
-        // './test/specs/android/navToActivity.test.js',
-        // './test/specs/android/scrolling.test.js'
+        './test/specs/android/**/*.js',
+
     ],
     exclude: [    ],
     maxInstances: 1,
