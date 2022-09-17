@@ -27,5 +27,6 @@ describe("dealing with Alerts",async()=>{
 
         await expect(alert).not.toExist();
         
+        await driver.closeApp();
     })
 })
