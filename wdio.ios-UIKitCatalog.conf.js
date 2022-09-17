@@ -2,7 +2,7 @@ let { join } = require('path');
 exports.config = {
     port: 4723,
     specs: [
-        './test/specs/ios/**/*.js',
+        './test/specs/ios-UIKitCatalog/**/*.js',
 
     ],
     exclude: [    ],
@@ -10,7 +10,7 @@ exports.config = {
     capabilities: [{
         "appium:automationName": "XCUITest",
         "platformName": "iOS",
-        "appium:platformVersion": "15.5",
+        "appium:platformVersion": "14.4",
         "appium:deviceName": "iPhone 12 Pro",
         'appium:app': join(process.cwd(), './apps/UIKitCatalog.app')
     }],
