@@ -10,8 +10,12 @@ jobs:
           with:
             node-version: 18
         - name: Execute Test
-          run: |
-            npm install -g appium@next
-            appium -v
-            appium &>/dev/null &
+          run: npm install -g appium@next
+
+        - name: Check Appium Version
+          run: appium -v
+
+        - name: Run Appium in the background
+          run: appium &>/dev/null &
+            
           #npx wdio wdio.ios-wdioApp.conf.js
