@@ -25,4 +25,4 @@ jobs:
           run: appium &>/dev/null &
             
         - name: Execute WDIO Tests
-          run: npx wdio wdio.ios-wdioApp.conf.js
+          run: npx wdio wdio.ios-CI.conf.js
