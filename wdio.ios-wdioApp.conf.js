@@ -12,7 +12,7 @@ exports.config = {
         "platformName": "iOS",
         //"appium:platformVersion": "14.4",
         "appium:deviceName": "iPhone 12 Pro",
-        "appium:isHeadless": "true",
+        //"appium:isHeadless": "true",
         'appium:app': join(process.cwd(), './apps/wdioNativeDemoApp.app')
     }],
     logLevel: 'info',
