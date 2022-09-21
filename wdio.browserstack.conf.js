@@ -4,7 +4,6 @@ exports.config = {
 
     user: process.env.BROWSERSTACK_USERNAME,
     key: process.env.BROWSERSTACK_ACCESS_KEY,
-    
     specs: [
         //'./test/specs/**/*.js'
     ],
@@ -19,27 +18,15 @@ exports.config = {
         'appium:app':  process.env.APP_ID,
         "appium:autoGrantPermissions": true
     }],
-
     logLevel: 'info',
     bail: 0,
     baseUrl: 'http://localhost',
-    //
-    // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
-    //
-    // Default timeout in milliseconds for request
-    // if browser driver or grid doesn't send response
     connectionRetryTimeout: 120000,
-    //
-    // Default request retries count
     connectionRetryCount: 3,
-
     services: ['browserstack'],
-    
     framework: 'mocha',
-
     reporters: ['spec'],
-
     mochaOpts: {
         ui: 'bdd',
         timeout: 60000
