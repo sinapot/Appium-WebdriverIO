@@ -12,7 +12,7 @@ jobs:
         - name: Install
           run: npm install
         - name: Execute Test
-        - run: |
+          run: |
             npm install -g appium@next
             appium -v
             appium &>/dev/null &
