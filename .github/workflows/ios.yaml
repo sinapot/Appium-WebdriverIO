@@ -12,8 +12,7 @@ jobs:
         - name: Install
           run: npm install
         - name: Execute Test
-          run: |
-            npm install -g appium@next
-            appium -v
-            appium &>/dev/null &
-            npx wdio wdio.ios-wdioApp.conf.js
+          run: npm install -g appium@next|
+          run: appium -v
+          run: appium &>/dev/null &
+          run: npx wdio wdio.ios-wdioApp.conf.js
