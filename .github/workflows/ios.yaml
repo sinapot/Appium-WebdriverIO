@@ -15,9 +15,11 @@ jobs:
 
         - name: Install latest Appium version
           run: npm install -g appium@next
+        - name: Install XCUITEST Driver
+          run: appium driver install xcuitest
 
-        - name: Check WDIO Version
-          run: npx wdio --version
+        - name: check Driver list
+          run: appium driver list
 
         - name: Run Appium in the background
           run: appium &>/dev/null &
