@@ -10,8 +10,9 @@ exports.config = {
     capabilities: [{
         "appium:automationName": "XCUITest",
         "platformName": "iOS",
-        "appium:platformVersion": "14.4",
+        //"appium:platformVersion": "14.4",
         "appium:deviceName": "iPhone 12 Pro",
+        "isHeadless": "true",
         'appium:app': join(process.cwd(), './apps/wdioNativeDemoApp.app')
     }],
     logLevel: 'info',
