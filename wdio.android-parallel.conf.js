@@ -6,7 +6,7 @@ exports.config = {
 
     ],
     exclude: [    ],
-    maxInstances: 1,
+    maxInstances: 3,
     capabilities: [
         //Pixel 2
         {
@@ -15,7 +15,23 @@ exports.config = {
             "appium:platformVersion": "11",
             "appium:deviceName": "Pixel 2",
             'appium:app': join(process.cwd(), './apps/ApiDemos-debug.apk')
-        }
+        },
+        //Pixel 4
+        {
+            "appium:automationName": "UiAutomator2",
+            "platformName": "Android",
+            "appium:platformVersion": "9.0",
+            "appium:deviceName": "Pixel 4",
+            'appium:app': join(process.cwd(), './apps/ApiDemos-debug.apk')
+            },
+        //Pixel 5
+        {
+            "appium:automationName": "UiAutomator2",
+            "platformName": "Android",
+            "appium:platformVersion": "12.0",
+            "appium:deviceName": "Pixel 5",
+            'appium:app': join(process.cwd(), './apps/ApiDemos-debug.apk')
+            }
     ],
     logLevel: 'info',
     bail: 0,

@@ -2,20 +2,37 @@ let { join } = require('path');
 exports.config = {
     port: 4723,
     specs: [
-        './test/specs/android/**/*.js',
+        './test/specs/ios-UIKitCatalog/**/*.js',
 
     ],
     exclude: [    ],
-    maxInstances: 1,
+    maxInstances: 3,
     capabilities: [
-        //Pixel 2
+        //iPhone 8
         {
-            "appium:automationName": "UiAutomator2",
-            "platformName": "Android",
-            "appium:platformVersion": "11",
-            "appium:deviceName": "Pixel 2",
-            'appium:app': join(process.cwd(), './apps/ApiDemos-debug.apk')
-        }
+            "appium:automationName": "XCUITest",
+            "platformName": "iOS",
+            "appium:platformVersion": "14.4",
+            "appium:deviceName": "iPhone 8",
+            'appium:app': join(process.cwd(), './apps/UIKitCatalog.app')
+        },
+        //iPhone 13 mini
+        {
+            "appium:automationName": "XCUITest",
+            "platformName": "iOS",
+            "appium:platformVersion": "15.4",
+            "appium:deviceName": "iPhone 13 mini",
+            'appium:app': join(process.cwd(), './apps/UIKitCatalog.app')
+            },
+
+        //iPhone 14
+        {
+            "appium:automationName": "XCUITest",
+            "platformName": "iOS",
+            "appium:platformVersion": "16.0",
+            "appium:deviceName": "iPhone 14",
+            'appium:app': join(process.cwd(), './apps/UIKitCatalog.app')
+            },
     ],
     logLevel: 'info',
     bail: 0,
