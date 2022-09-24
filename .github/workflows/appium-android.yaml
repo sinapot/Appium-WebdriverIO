@@ -33,4 +33,4 @@ jobs:
             profile: Pixel 4
 
         - name: Execute WDIO Tests
-          run: npx wdio wdio.ios-CI.conf.js
+          run: npx wdio wdio.android-CI.conf.js
