@@ -1,0 +1,36 @@
+name: CI on Android
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        api-level: [28]  
+        target: [default]
+    steps:
+        - name: Checkout the git Repo
+          uses: actions/checkout@v2
+        - uses: actions/setup-node@v2
+          with:
+            node-version: 18
+
+        - name: Install Dependencies
+          run: npm install
+
+        - name: Install latest Appium version
+          run: npm install -g appium@next
+        - name: Install XCUITEST Driver
+          run: appium driver install xcuitest
+
+        - name: Run Appium in the background
+          run: appium &>/dev/null &
+        - name: Run Android Emulator
+          uses: reactivecircus/android-emulator-runner@v1
+          with:
+            api-level: ${{ matrix.api-level }}
+            target: ${{ matrix.target }}
+            arch: x86_64
+            profile: Pixel 4
+
+        - name: Execute WDIO Tests
+          run: npx wdio wdio.ios-CI.conf.js
